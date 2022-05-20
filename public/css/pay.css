@@ -1,0 +1,58 @@
+
+
+.pay_container .container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.product{
+    /* border: 2px solid rgb(220, 33, 64); */
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    box-shadow: 0 0 0.8rem rgb(255, 0, 38);
+    border-radius: 0.5rem;
+    
+}
+
+
+.product img{
+    width: 20rem;
+}
+
+#faare{
+    display: none;
+}
+.description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.description p{
+    color: red;
+}
+
+.product  button{
+    background-color: rgb(187, 38, 38);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 2;
+    width: 100%;
+    border-radius: 0.2rem;
+    transition: all 0.1s ease;
+}
+
+
+.product  button:hover{
+    background-color: rgb(236, 100, 100);
+    color: rgb(107, 4, 4);
+}

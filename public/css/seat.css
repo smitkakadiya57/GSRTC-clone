@@ -1,0 +1,108 @@
+.trip_summary {
+  background-color: white;
+  line-height: 3;
+  box-shadow: 0 0 0.1rem black;
+}
+
+.trip_summary .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.trip_summary .container .trip_de {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 5%;
+  align-items: center;
+}
+
+.bus_de {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.bus_su {
+  color: green;
+}
+
+.bus_list {
+  margin: 2rem 0rem;
+}
+
+.bus_list .container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+.bus {
+  background-color: #fff;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 0.2rem black;
+  padding: 2rem;
+}
+
+.bus_details {
+  /* display: flex; */
+  /* flex-wrap: nowrap; */
+  /* column-gap: 2%; */
+  /* border: 5px solid black ; */
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.bus_details section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bus_details section p {
+  text-align: center;
+}
+
+.bus_rate {
+  background-color: rgb(60, 165, 60);
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0.7rem;
+  align-items: center;
+  border-radius: 0.5rem;
+  color: white;
+}
+.bus_rate i {
+  padding: 0.2rem;
+}
+
+.view_seat_btn {
+  background-color: red;
+  color: white;
+  outline: none;
+  border: none;
+  padding: 0.5rem;
+  float: right;
+  text-align: center;
+  text-decoration: none;
+}
+
+.view_seat_form_btn {
+  background-color: red;
+  color: white;
+  outline: none;
+  border: none;
+  padding: 0.5rem;
+  width: 100%;
+  transform: translateY(50%);
+}
+
+
+#final_form_res{
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

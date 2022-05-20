@@ -1,0 +1,108 @@
+/* font aweson cdn link  */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css");
+
+
+/* google font link  */
+@import url("https://fonts.googleapis.com/css2?family=Andada+Pro&family=Epilogue&family=Manrope&family=Roboto&family=Satisfy&family=Sora&display=swap");
+
+
+
+
+/* alert message css start here  */
+.alert_overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.048);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+}
+
+.alert_window {
+  width: 50%;
+  background: white;
+  font-size: 1rem;
+  box-shadow: 0 0 5rem 0.1rem rgba(128, 128, 128, 0.712);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-left: 0.5rem solid;
+}
+
+.success {
+  border-color: rgb(4, 195, 4);
+}
+.success .alert_icon i {
+  color:  rgb(4, 195, 4);
+}
+
+.info {
+  border-color: rgb(11, 11, 204);
+}
+.info .alert_icon i {
+  color: rgb(11, 11, 204);
+}
+
+.warn {
+  border-color: rgb(255, 166, 0);
+}
+.warn .alert_icon i {
+  color: rgb(255, 166, 0);
+}
+
+.danger{
+  border-color: rgb(255, 20, 20);
+}
+.danger .alert_icon i{
+  color: rgb(255, 20, 20);
+}
+
+
+.alert_icon i {
+  font-size: 3rem;
+}
+
+.alert_title {
+  color: rgb(27, 26, 26);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.alert_close {
+  font-size: 1.5rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: none;
+  margin-left: auto;
+}
+
+.alert_close:active {
+  transform: scale(0.9);
+}
+
+.alert_content {
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: gray;
+}
+
+/* alert message css end  here  */
+
+
+/* alert message responsive css start here */
+
+@media screen and (max-width:768px) {
+  .alert_window{
+    width: 90%;
+  }
+}
+
+/* alert message responsive css end here */

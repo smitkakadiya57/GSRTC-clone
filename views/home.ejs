@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | GSRTC</title>
+
+   
+
+    <%- include('common/links'); %>
+
+</head>
+
+<body>
+
+    <%- include('common/header'); %>
+
+
+
+
+    <div class="search_section">
+        <div class="container">
+            <form action="/seat" onsubmit="return check()" class="search_form" method="POST">
+                <div class="form_field">
+                    <label for="source"><i class="fa-solid fa-bus"></i></label>
+                    <input type="text" id="source" list="city" name="source" autocomplete="off" placeholder="ENTER SOURCE">
+                    <datalist id="city">
+
+                        <% for(var i=0; i<citylist.length; i++) { %>
+                            <option value="<%= citylist[i].city %>" >
+                            
+                        <% } %>
+
+                        <!-- <option value="Ahmedabad" >
+                        <option value="Surat">
+                        <option value="Gandhiangar">
+                        <option value="Bharuch"> -->
+                    </datalist>
+                </div>
+                <hr>
+                <div class="form_field">
+                    <label for="des"><i class="fa-solid fa-bus"></i></label>
+                    <input type="text" id="des" list="city" name="des" autocomplete="off" placeholder="ENTER DESTINATION">
+                </div>
+                <hr>
+                <div class="form_field">
+                    <input type="date" id="date" name="date" >
+                    
+                    <a class="date_choice">Tomorrow</a>
+                </div>
+                <hr>
+                <div class="form_field">
+                    <button type="submit" class="search_form_btn">SUBMIT</button>
+                 </div>
+            </form>
+            <img src="img/lo.png" alt="book now">
+        </div>
+
+
+        
+    </div>
+
+
+<div class="special_trip">
+    <div class="container">
+        <h3>Special Trips</h3>
+        <marquee direction="right" scrollamount="12" onmouseover="this.stop();" onmouseleave="this.start();" class="trip_poster">
+            <img src="img/t1.jpg" alt="12">
+            <img src="img/t2.jpg" alt="12">
+            <img src="img/t3.jpg" alt="12">
+            <img src="img/t4.jpg" alt="12">
+            <img src="img/t5.jpg" alt="12">
+            <img src="img/t6.jpg" alt="12">
+            <img src="img/t7.jpg" alt="12">
+        </marquee>
+    </div>
+</div>
+
+
+<div class="whats_new">
+    <div class="container">
+        <h3>Latest Offers</h3>
+        <marquee direction="right" scrollamount="12" onmouseover="this.stop();" onmouseleave="this.start();" class="what_new_poster">
+            <img src="img/offer/tt0.jpg" alt="">
+            <img src="img/offer/tt1.jpg" alt="">
+            <img src="img/offer/tt2.jpg" alt="">
+            <img src="img/offer/tt3.jpg" alt="">
+            <img src="img/offer/tt4.jpg" alt="">
+            <img src="img/offer/tt5.jpg" alt="">    
+        </marquee>
+    </div>
+</div>
+
+<div class="bus_class">
+    <div class="container">
+        <h3>Try Our Buses </h3>
+        <div direction="right" scrollamount="12" onmouseover="this.stop();" onmouseleave="this.start();" class="bus_class_poster">
+            <div class="ps">
+                <img src="img/3-2-bus-picture.png" alt="">
+                <h4>Express</h4>
+            </div>
+            <div class="ps">
+                <img src="img/6-2-bus-png-file.png" alt="">
+                <h4>Sleeper</h4>
+            </div>
+            <div class="ps">
+                <img src="img/coach-ga917fd957_640.png" alt="">
+                <h4>Gurjarnagari</h4>
+            </div>
+            <div class="ps">
+                <img src="img/volvo.png" alt="">
+                <h4>Volvo</h4>
+            </div>
+  
+        </div>
+    </div>
+</div>
+
+
+<%- include('common/footer'); %>
+
+<script src="js/nav.js"></script>
+<script src="js/alert_msg.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+
+
+.not_found .container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+
+.not_found_img{
+    width: 10%;
+}
+
+.error_img{
+    width: 50%;
+}
+
+
+
+.not_found .container .sucess_img{
+    height: 10%;
+    width: 20%;
+}

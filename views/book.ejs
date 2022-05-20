@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Platform</title>
+
+
+    <%- include('common/links'); %>
+
+
+</head>
+
+<body>
+
+
+    <%- include('common/header'); %>
+
+
+        <form id="final_form_res" onsubmit=" return check_book()" action="confirm" method="post">
+
+
+            <div class="choose_point container ">
+                <!-- <div class="container"> -->
+
+                <div class="point_title">
+                    <a class="b_point">BOARDING POINT</a>
+                    <a class="d_point">DROPPING POINT</a>
+                </div>
+                <div class="point_list">
+
+                    <div class="start_point">
+
+
+                        <% for(var i=0; i<obj.blist.length; i++) { %>
+                            <input type="radio" id="start<%= i %>" name="start" value=" <%= obj.blist[i] %>">
+                            <label for="start<%= i %>">
+                                <%= obj.blist[i] %>
+                            </label>
+                            <br>
+                            <% } %>
+                    </div>
+                    <div class="des_point">
+
+                        <% for(var i=0; i<obj.dlist.length; i++) { %>
+                            <input type="radio" id="des<%= i %>" name="des" value=" <%= obj.dlist[i] %>">
+                            <label for="des<%= i %>">
+                                <%= obj.dlist[i] %>
+                            </label>
+                            <br>
+                            <% } %>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <%= data.bus %>
+
+
+                <div class="seat_choose ">
+                    <div class="container">
+                        <div class="<%= data.class %> sea_container">
+
+                            <input type="hidden" class="type" value="<%= data.class %>">
+
+                            <% for(var i=0; i<layout.length; i++) { %>
+                                <% for(var j=0; j<layout[0].length; j++) { %>
+
+
+                                    <% if (layout[i][j]==0) { %>
+                                        <div class="balcony"></div>
+
+                                        <%} else if(obj.book_seat.indexOf(layout[i][j])==-1) { %>
+
+                                            <div class="seat">
+                                                <input type="checkbox" value="<%= layout[i][j] %>" name="selec_seat">
+
+                                                <img src="/img/<%= data.class %>/sbl.png" alt="">
+                                                <span>
+                                                    <%= layout[i][j] %>
+                                                </span>
+                                            </div>
+
+                                            <%} else { %>
+                                                <div class="seat">
+                                                    <input disabled="true" type="checkbox" value="<%= layout[i][j] %>"
+                                                        name="selec_seat">
+                                                    <img src="/img/<%= data.class %>/sg.png" alt="">
+                                                    <span>
+                                                        <%= layout[i][j] %>
+                                                    </span>
+                                                </div>
+                                                <% } %>
+                                                    <% } %>
+                                                        <% } %>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="final_form container">
+                    <div class="form_warn">
+
+                        <h4>THIS BOOKING IS NON-REFUNDABLE</h4>
+                        <p>This booking falls under the 100% cancellation charges window of the
+                            cancellation policy
+                        </p>
+                    </div>
+                    <br>
+                    <hr>
+                    <br>
+                    <section>
+                        <h4>Boarding & Dropping</h4>
+                        <!-- <p>Ahmedabad CBS4 (13:00) &#8594; Surat Central (18:25)</p> -->
+                        <p>
+
+                            <%= data.source %> (<%= data.stime %>) &#8594; <%= data.des %> (<%= data.dtime %>)
+                        </p>
+                    </section>
+                    <section>
+                        <h4>Route no </h4>
+                        <p>
+                            <%= data.code %>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h4>Seat NO. </h4>
+                        <p class="seat_no"></p>
+                    </section>
+
+                    <section class="pass_container">
+
+                        <input type="hidden" name="ps1">
+                    </section>
+                    <section>
+                        <input id="base_fare" type="hidden" value="<%= data.fare %>">
+                        <h4> Fare Details &nbsp;&nbsp;&nbsp;&nbsp; </h4>
+                        <div class="fare_table">
+                            <p>Amount</p>
+                            <b>INR</b>
+                            <input readonly  id="amt" type="number">
+                        </div>
+                        <div class="fare_table">
+                            <p>Discount</p>
+                            <b>INR</b>
+                            <input readonly  id="disc" type="number">
+                        </div>
+                        <div class="fare_table">
+                            <p>Total</p>
+                            <b>INR</b>
+                            <input readonly  id="total" value="" name="total" type="number">
+                        </div>
+
+                    </section>
+
+
+                    <section class="contact_det">
+                        <h4>Contact Details</h4>
+                        <hr>
+                        <input type="email" name="email" placeholder="Email ID" >
+                        <input type="tel" name="phone" placeholder="Phone no" >
+                    </section>
+                    <section>
+                        <button type="submit" id="ghj" class="view_seat_form_btn">PROCEED TO PAY</button>
+                    </section>
+                </div>
+
+
+        </form>
+
+
+       
+  
+        <%- include('common/footer'); %>
+
+
+        <script src="/js/seat.js"></script>
+        <script src="/js/nav.js"></script>
+        <script src="/js/alert_msg.js"></script>
+        
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticket | GSRTC</title>
+
+
+    <%- include('common/links'); %>
+
+</head>
+
+<body>
+
+    <%- include('common/header'); %>
+
+        <div class="trip_summary">
+            <div class="container">
+                <div class="trip_de">
+                    <p>
+                        <%= source %>&#8594; <%= des %>
+                    </p>&#10072;
+                    <p>
+                        <%= date %>
+                    </p>
+                </div>
+                <div class="bus_de">
+                    <p><b>
+                            <%= findbus %>
+                        </b> bus found</p>
+                    <p class="bus_su">Seats Available</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="bus_list">
+            <div class="container">
+   
+                <% for(var i=0; i<send_trips.length; i++) { %>
+
+
+                    <div class="bus">
+                        <div class="bus_details">
+                            <section>
+                                <h3>
+                                    <%= send_trips[i].code %>
+                                </h3>
+                                <p>
+                                    <%= send_trips[i].bus %>
+                                </p>
+                            </section>
+                            <section>
+                                <h2>
+                                    <%= send_trips[i].stime %>
+                                </h2>
+                                <p>
+                                    <%= send_trips[i].source %>
+                                </p>
+                            </section>
+                            <section>
+                                <p> <%= send_trips[i].duration[0] %>h  <%= send_trips[i].duration[1] %>m</p>
+                               
+                            </section>
+                            <section>
+                                <h2>
+                                    <%= send_trips[i].dtime %>
+                                </h2>
+                                <p>
+                                    <%= send_trips[i].des %>
+                                </p>
+                            </section>
+                            <section>
+                                <span class="bus_rate"> <i class="fa-solid fa-bookmark"></i>
+                                    <%= send_trips[i].rating %>
+                                </span>
+                            </section>
+                            <section>
+                                <p>INR <b>
+                                        <%= send_trips[i].fare %>
+                                    </b></p>
+                            </section>
+                            <section>
+                                <p>
+                                    <%= send_trips[i].available_seat %> Seats available
+                                </p>
+                            </section>
+                        </div>
+                        <a href="book/<%= i %>" class="view_seat_btn">VIEW SEATS</a>
+                    </div>
+
+                    <% } %>
+
+
+            </div>
+        </div>
+        </div>
+
+        <%- include('common/footer'); %>
+        <script src="js/nav.js"></script>
+
+</body>
+
+</html>
